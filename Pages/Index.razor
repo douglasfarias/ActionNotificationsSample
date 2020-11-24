@@ -1,0 +1,22 @@
+﻿@page "/"
+<ActionNotificationList _ActionNotificationList="ActionNotificationList" _Delay="Delay"></ActionNotificationList>
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+@code{
+    public List<ActionNotification> ActionNotificationList { get; set; } = new List<ActionNotification>();
+    public int Delay { get; set; } = 10000;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ActionNotificationList.Add(
+            new ActionNotification
+            {
+                Title = "Mensagem do sistema",
+                Message = "Página carregada"
+            }
+            );
+    }
+}
